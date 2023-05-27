@@ -9,7 +9,7 @@ public class Deck {
 	String[] naipe = { "♠", "♦", "♥", "♣" };
 	private static final ArrayList<Carta> deck = new ArrayList<Carta>();
 	
-	//Preencher o deck com cada combinação de um valor com o naipe
+	//Preencher o deck com cada combinação de um valor com um naipe
 	public void fillDeckList() {
 		for (String n : naipe) {
 			for (String v : valor) {
@@ -33,19 +33,8 @@ public class Deck {
         }
     }
 	
-	//Fornecer as cartas iniciais de cada jogador antes de excluí-las do baralho 
 	public ArrayList<Carta> getDeck(){
-		
-		ArrayList<Carta> cards = new ArrayList<>();
-		
-		Random rd = new Random();
-		int card1 = rd.nextInt(deck.size());
-		cards.add(deck.remove(card1));
-		
-		int card2 = rd.nextInt(deck.size());
-		cards.add(deck.remove(card2));
-		
-		return cards;
+		return deck;
 	}
 }
 
