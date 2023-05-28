@@ -53,7 +53,11 @@ public class Dealer {
 
     // Manter o número de cartas (17 pontos ou mais) na mão e encerrar jogo
     public manter{
-        // Printar as cartas do Dealer e a pontuação dele;
+        System.out.println("DEALER%nAs cartas que o Dealer possui são:");
+        for (quantas=0;quantas<cartasMao.size();quantas++){
+            System.out.println(cartasMao.getValor(quantas) + cartasMao.getNaipe(quantas));
+        }
+        System.out.println("Totalizando " + calcularResultado + "pontos.");
     }
 
     // Adicionar mais uma carta na mão do dealer
