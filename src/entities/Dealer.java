@@ -1,6 +1,8 @@
 package entities;
 
 import java.util.*;
+import entities.Carta;
+import entities.Deck;
 
 public class Dealer {
     Arraylist<Carta> cartasMao = new ArrayList<Carta>();
@@ -18,7 +20,7 @@ public class Dealer {
     // Mostrar uma carta do Dealer para o Jogador
     public mostrarMao {
         System.out.println("DEALER %nA carta virada para cima é: ");
-        System.out.println(cartasMao.getValor(0) + " de " + cartasMao.getNaipe(0); // ?
+        System.out.println(cartasMao.getValor(0) + " de " + cartasMao.getNaipe(0)); // ?
     }
 
     // Calcular a pontuação total das cartas na mão
