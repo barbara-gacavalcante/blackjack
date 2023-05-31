@@ -26,7 +26,7 @@ public class Carta {
 	}
 
 	public String toString() {
-		return naipe + valor;
+		return naipe + " " + valor;
 	}
 
 }
