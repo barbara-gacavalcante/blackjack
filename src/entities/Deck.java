@@ -5,7 +5,7 @@ import java.util.*;
 public class Deck {
 
 	String[] valor = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "J", "Q", "K" };
-	String[] naipe = { "♠", "♦", "♥", "♣" };
+	String[] naipe = { "PAUS", "OURO", "COPAS", "ESPADAS" };
 	private static final ArrayList<Carta> deck = new ArrayList<Carta>();
 
 	// Preencher o deck com cada combinação de um valor com um naipe

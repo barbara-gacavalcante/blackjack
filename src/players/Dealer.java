@@ -23,6 +23,10 @@ public class Dealer {
     }
   }
 
+  public int getPontos() {
+    return pontos;
+  }
+
   // Mostrar uma carta do Dealer para o Jogador
   public void mostrarMao() {
     System.out.println("DEALER \nA carta virada para cima é: ");
@@ -30,9 +34,6 @@ public class Dealer {
   }
 
   // Calcular a pontuação total das cartas na mão
-  public int calcularResultado() {
-    return pontos;
-  }
 
   // Manter o número de cartas (17 pontos ou mais) na mão e encerrar jogo
   public void manter() {
@@ -41,7 +42,7 @@ public class Dealer {
     for (Carta c : cartasMao) {
       System.out.println(c.getValor() + c.getNaipe());
     }
-    System.out.println("Totalizando " + calcularResultado() + " pontos.");
+    System.out.println("Totalizando " + pontos + " pontos.");
   }
 
   // Adicionar mais uma carta na mão do dealer

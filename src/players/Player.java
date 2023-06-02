@@ -25,6 +25,14 @@ public class Player extends Dealer {
     return cartasMao;
   }
 
+  public int getPontos() {
+    return pontos;
+  }
+
+  public double getAposta() {
+    return aposta;
+  }
+
   public void gerarMao(ArrayList<Carta> deck) {
     int startingAmount = 2;
 
@@ -44,7 +52,7 @@ public class Player extends Dealer {
     for (Carta c : cartasMao) {
       System.out.println(c.getValor() + c.getNaipe());
     }
-    System.out.println("Totalizando " + calcularResultado() + " pontos.");
+    System.out.println("Totalizando " + pontos + " pontos.");
   }
 
   public void pegar(ArrayList<Carta> deck) { // Falta implementar se o ás valera 1 ou 11
@@ -52,9 +60,10 @@ public class Player extends Dealer {
 
     cartasMao.add(deck.get(randomNumber));
     deck.remove(randomNumber);
-    System.out.println("Você pegou uma carta..." + "\nNaipe: " + cartasMao.get(cartasMao.size() - 1).getNaipe()
-        + "\nValor: " + cartasMao.get(cartasMao.size() - 1).getValor());
+    System.out.println("Você pegou uma carta..." + cartasMao.get(cartasMao.size() - 1).getNaipe()
+        + cartasMao.get(cartasMao.size() - 1).getValor());
     pontos += verifyValue(cartasMao.get(cartasMao.size() - 1).getValor());
+    System.out.println("Totalizando " + pontos + " pontos.");
   }
 
   public void manter() {
