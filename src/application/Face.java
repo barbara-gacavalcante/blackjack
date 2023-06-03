@@ -1,6 +1,5 @@
 package application;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -73,7 +72,7 @@ public class Face {
         op = 1;
         System.out.println("Quantas bufunfas voce tem (em dinheiro)!!");
         saldo = Double.parseDouble(sc.nextLine());
-      } catch (NumberFormatException erro){
+      } catch (NumberFormatException erro) {
         op = 0;
         System.out.println("Voce digitou um caractere que nao eh numero, meu caro. Digite novamente");
       }
@@ -84,7 +83,7 @@ public class Face {
         op = 1;
         System.out.println("Quanto da bufunfa voce deseja apostar (tambem em dinheiro)!!");
         aposta = Double.parseDouble(sc.nextLine());
-      } catch (NumberFormatException erro){
+      } catch (NumberFormatException erro) {
         op = 0;
         System.out.println("Voce digitou um caractere que nao eh numero, meu caro. Digite novamente");
       }
@@ -97,17 +96,15 @@ public class Face {
       if (players.get(indice).getNome().equalsIgnoreCase(nome)) {
         op = 1;
         System.out.println("\n==============IMPORTANTE==============" +
-                "\nEncontramos o teu nome em nossa lista de Players. Voce tem, na verdade, o saldo de R$" + players.get(indice).getSaldo() + ", mas vamos manter a aposta!" +
-                "\n======================================");
+            "\nEncontramos o teu nome em nossa lista de Players. Voce tem, na verdade, o saldo de R$"
+            + players.get(indice).getSaldo() + ", mas vamos manter a aposta!" +
+            "\n======================================");
         players.get(indice).setAposta(aposta);
         break;
       }
 
-
     if (op == 0)
       players.add(new Player(nome, saldo, aposta));
-
-
 
     deck.fillDeckList();
     deck.shuffle();
@@ -142,10 +139,8 @@ public class Face {
               dealer.pegar(deck.getDeck());
             }
             dealer.manter();
-            System.out.println("aaaaaaaaaaaaa");
             con.compararRes(players.get(indice), dealer);
             jogoAcabado = true;
-            System.out.println("aaaaaaaaaaaaa");
             break;
           }
           System.out.println(players.get(indice).getPontos() == 21);
@@ -161,15 +156,14 @@ public class Face {
     if (players.size() == 0)
       System.out.println("Ainda nao existe jogadores cadastrados!!");
     else {
-      System.out.println("Estes sao os dados dos jogadores anteriores, incluindo o nome, o saldo atual e a ultima aposta: ");
+      System.out
+          .println("Estes sao os dados dos jogadores anteriores, incluindo o nome, o saldo atual e a ultima aposta: ");
       for (Player aux : players) {
         System.out.println("Player " + indice++ + "-> " +
-                "\nNome: " + aux.getNome() +
-                "\nSaldo atual: RS" + String.format("%.2f", aux.getSaldo()) +
-                "\nUltima aposta: R$" + String.format("%.2f", aux.getAposta()) + "\n");
+            "\nNome: " + aux.getNome() +
+            "\nSaldo atual: RS" + String.format("%.2f", aux.getSaldo()) +
+            "\nUltima aposta: R$" + String.format("%.2f", aux.getAposta()) + "\n");
       }
     }
   }
 }
-
-

@@ -1,11 +1,7 @@
 package application;
 
-import players.*;
-import entities.*;
-
 public class Program {
 
-	private static Deck deck = new Deck();
 	private static Face face = new Face();
 
 	public static void main(String[] args) {

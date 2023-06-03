@@ -2,7 +2,6 @@ package players;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Scanner;
 
 import entities.Carta;
 
@@ -33,9 +32,13 @@ public class Player extends Dealer {
     return aposta;
   }
 
-  public String getNome() { return nome; }
+  public String getNome() {
+    return nome;
+  }
 
-  public double getSaldo() { return saldo; }
+  public double getSaldo() {
+    return saldo;
+  }
 
   public void setAposta(double aposta) {
     this.aposta = aposta;
@@ -47,7 +50,6 @@ public class Player extends Dealer {
 
     while (cartasMao.size() > 0)
       cartasMao.remove(0);
-
 
     for (int i = 0; i < startingAmount; i++) {
       cartasMao.add(deck.get(i));

@@ -1,13 +1,10 @@
 package players;
 
 import java.util.ArrayList;
-import java.util.Random;
-import java.util.Scanner;
 
 import entities.Carta;
-import entities.Deck;
 
-public class Dealer {
+public class Dealer extends AbstractPlayer {
   private ArrayList<Carta> cartasMao = new ArrayList<Carta>();
   public int pontos = 0;
   private boolean flag = false;
@@ -52,11 +49,13 @@ public class Dealer {
 
   // Adicionar mais uma carta na mão do dealer
   public void pegar(ArrayList<Carta> deck) {
+
     cartasMao.add(deck.get(0));
     deck.remove(0);
     System.out.println("O dealer pegou uma carta..." + "\nNaipe: " + cartasMao.get(cartasMao.size() - 1).getNaipe()
         + "\nValor: " + cartasMao.get(cartasMao.size() - 1).getValor());
     pontos += verifyValue(cartasMao.get(cartasMao.size() - 1).getValor());
+
   }
 
   public int verifyValue(String s) { // Talvez mais organizado na main
