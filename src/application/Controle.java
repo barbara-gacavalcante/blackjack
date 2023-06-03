@@ -5,7 +5,8 @@ import players.*;
 public class Controle {
 
   public void compararRes(Player player, Dealer dealer) {
-    if (player.getPontos() > dealer.getPontos() && player.getPontos() <= 21) {
+
+    if ((player.getPontos() > dealer.getPontos()) && player.getPontos() <= 21) {
       System.out.println("Player ganhou aeee!!");
       if (player.getPontos() == 21) {
         System.out.println("Player ganhou de 21, player ganha 2x a aposta!!");
@@ -16,6 +17,7 @@ public class Controle {
       player.setSaldo(player.getAposta());
       return;
     }
+
     if (player.getPontos() < dealer.getPontos()) {
       System.out.println("Player perdeu :(");
       if (dealer.getPontos() == 21) {
@@ -27,10 +29,23 @@ public class Controle {
       player.setSaldo(-(player.getAposta()));
       return;
     }
+
     if (player.getPontos() > 21 && dealer.getPontos() > 21) {
       System.out.println("Os dois perderam, haha!!");
-      System.out.println("Player perde metade da aposta!!");
-      player.setSaldo(-(player.getAposta() / 2));
+      System.out.println("Player não perde a aposta!!");
+      return;
+    }
+
+    if (player.getPontos() > 21 && dealer.getPontos() < 21) {
+      System.out.println("O dealer ganhou, haha!!");
+      System.out.println("Player perde a aposta!!");
+      player.setSaldo(-(player.getAposta()));
+      return;
+    }
+
+    if (player.getPontos() == 21 && dealer.getPontos() == 21) {
+      System.out.println("Os dois ganharam, :(!!");
+      System.out.println("Player não perde a aposta!!");
       return;
     }
   }

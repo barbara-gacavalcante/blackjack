@@ -8,6 +8,7 @@ import entities.Carta;
 import entities.Deck;
 
 public class Dealer {
+
   private ArrayList<Carta> cartasMao = new ArrayList<Carta>();
   public int pontos = 0;
   private boolean flag = false;
@@ -27,10 +28,19 @@ public class Dealer {
     return pontos;
   }
 
+  public void setPontos(int p) {
+    pontos = p;
+  }
+
   // Mostrar uma carta do Dealer para o Jogador
   public void mostrarMao() {
     System.out.println("DEALER \nA carta virada para cima é: ");
     System.out.println(cartasMao.get(0).getValor() + cartasMao.get(0).getNaipe()); // ?
+  }
+
+  public void resetar() {
+    cartasMao.clear();
+    setPontos(0);
   }
 
   // Calcular a pontuação total das cartas na mão

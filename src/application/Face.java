@@ -6,14 +6,15 @@ import entities.Deck;
 import players.*;
 
 public class Face {
-  private final Scanner sc = new Scanner(System.in);
+
   private final Controle con = new Controle();
   private Deck deck = new Deck();
   private Dealer dealer = new Dealer();
 
   public void UI() {
-
+    Scanner sc = new Scanner(System.in);
     int op;
+
     do {
       System.out.println("\t\t=-=-=-=-=-   BLACKJACK    -=-=-=-=-=\n");
       System.out.println("\t\t=-=-=-=-=-=-=   Menu   =-=-=-=-=-=-=\n");
@@ -31,6 +32,7 @@ public class Face {
           break;
         case 2:
           con.regras();
+          sc.close();
           UI();
           break;
         case 3:
@@ -41,6 +43,8 @@ public class Face {
           System.out.println("Criadores: " +
               "\nApanaula bBarbz Luizin Samu" +
               "\nE a perfeita maravilhosa Danizinhaaa!!!");
+
+          sc.close();
           UI();
           break;
         case 5:
@@ -48,9 +52,11 @@ public class Face {
           break;
       }
     } while (true);
+
   }
 
   public void novoJogo() {
+    Scanner sc = new Scanner(System.in);
     int op;
     boolean jogoAcabado = false;
     double saldo;
@@ -97,15 +103,15 @@ public class Face {
               dealer.pegar(deck.getDeck());
             }
             dealer.manter();
-            System.out.println("aaaaaaaaaaaaa");
             con.compararRes(player, dealer);
             jogoAcabado = true;
-            System.out.println("aaaaaaaaaaaaa");
             break;
           }
           System.out.println(player.getPontos() == 21);
           break;
       }
     } while (!jogoAcabado);
+    player.resetar();
+    dealer.resetar();
   }
 }

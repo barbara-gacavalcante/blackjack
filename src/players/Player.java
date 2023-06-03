@@ -29,6 +29,10 @@ public class Player extends Dealer {
     return pontos;
   }
 
+  public void setPontos(int p) {
+    pontos = p;
+  }
+
   public double getAposta() {
     return aposta;
   }
@@ -45,6 +49,11 @@ public class Player extends Dealer {
 
   public void setSaldo(double res) {
     saldo += res;
+  }
+
+  public void resetar() {
+    cartasMao.clear();
+    setPontos(0);
   }
 
   public void mostrarMao() {
