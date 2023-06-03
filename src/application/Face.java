@@ -107,7 +107,6 @@ public class Face {
             jogoAcabado = true;
             break;
           }
-          System.out.println(player.getPontos() == 21);
           break;
       }
     } while (!jogoAcabado);

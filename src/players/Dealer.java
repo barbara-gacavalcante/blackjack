@@ -59,8 +59,8 @@ public class Dealer {
   public void pegar(ArrayList<Carta> deck) {
     cartasMao.add(deck.get(0));
     deck.remove(0);
-    System.out.println("O dealer pegou uma carta..." + "\nNaipe: " + cartasMao.get(cartasMao.size() - 1).getNaipe()
-        + "\nValor: " + cartasMao.get(cartasMao.size() - 1).getValor());
+    System.out.println("O dealer pegou uma carta..." + "\n" + cartasMao.get(cartasMao.size() - 1).getNaipe()
+        + cartasMao.get(cartasMao.size() - 1).getValor());
     pontos += verifyValue(cartasMao.get(cartasMao.size() - 1).getValor());
   }
 
