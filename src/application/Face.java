@@ -49,8 +49,14 @@ public class Face {
         case 5:
           System.out.println("Cabou xauu 😘!!!");
           break;
+        default:
+          System.out.println("Voce digitou algo que nao esta entre os numeros naturais de 1 a 5. Tente novamente!");
+          break;
       }
-    } while (true);
+    } while (op != 5);
+
+    sc.close();
+
   }
 
   public void novoJogo() {
@@ -157,7 +163,7 @@ public class Face {
     else {
       System.out.println("Estes sao os dados dos jogadores anteriores, incluindo o nome, o saldo atual e a ultima aposta: ");
       for (Player aux : players) {
-        System.out.println("Jogador " + indice++ + "-> " +
+        System.out.println("Player " + indice++ + "-> " +
                 "\nNome: " + aux.getNome() +
                 "\nSaldo atual: RS" + String.format("%.2f", aux.getSaldo()) +
                 "\nUltima aposta: R$" + String.format("%.2f", aux.getAposta()) + "\n");

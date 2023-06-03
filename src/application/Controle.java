@@ -16,7 +16,7 @@ public class Controle {
       player.setSaldo(player.getAposta());
       return;
     }
-    if (player.getPontos() < dealer.getPontos()) {
+    if (player.getPontos() < dealer.getPontos() && dealer.getPontos() <= 21) {
       System.out.println("Player perdeu :(");
       if (dealer.getPontos() == 21) {
         System.out.println("Dealer ganhou de 21, player perde 2x a aposta!!");
@@ -27,11 +27,22 @@ public class Controle {
       player.setSaldo(-(player.getAposta()));
       return;
     }
+
     if (player.getPontos() > 21 && dealer.getPontos() > 21) {
       System.out.println("Os dois perderam, haha!!");
       System.out.println("Player perde metade da aposta!!");
       player.setSaldo(-(player.getAposta() / 2));
       return;
+    } else if (player.getPontos() > 21) {
+      System.out.println("Player perdeu :(");
+      System.out.println("Player ultrapassou os 21 pontos!");
+      System.out.println("player perde a aposta!!");
+      player.setSaldo(-(player.getAposta()));
+    } else if (dealer.getPontos() > 21) {
+      System.out.println("Player ganhou :)");
+      System.out.println("Dealer ultrapassou os 21 pontos!");
+      System.out.println("player ganhou a aposta!!");
+      player.setSaldo(+(player.getAposta()));
     }
   }
 

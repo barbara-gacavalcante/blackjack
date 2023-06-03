@@ -16,6 +16,11 @@ public class Dealer {
   public void gerarMao(ArrayList<Carta> deck) {
     int startingAmount = 2;
 
+    pontos = 0;
+
+    while (cartasMao.size() > 0)
+      cartasMao.remove(0);
+
     for (int i = 0; i < startingAmount; i++) {
       cartasMao.add(deck.get(i));
       pontos += verifyValue(cartasMao.get(cartasMao.size() - 1).getValor());
