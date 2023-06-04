@@ -20,13 +20,13 @@ public class Face {
     do {
       System.out.println("\t\t=-=-=-=-=-   BLACKJACK    -=-=-=-=-=\n");
       System.out.println("\t\t=-=-=-=-=-=-=   Menu   =-=-=-=-=-=-=\n");
-      System.out.println("\t1 - Novo jogo!");
+      System.out.println("\t1 - Novo jogo");
       System.out.println("\t2 - Regras");
       System.out.println("\t3 - Dados dos Jogadores Anteriores");
-      System.out.println("\t4 - Creditos");
+      System.out.println("\t4 - Créditos");
       System.out.println("\t5 - Finalizar programa");
 
-      System.out.println("\tDigite o numero indicado pelo menu para a opçao desejada: ");
+      System.out.println("\tDigite o número indicado pelo menu para a opção desejada: ");
       op = Integer.parseInt(sc.nextLine());
       switch (op) {
         case 1:
@@ -40,16 +40,20 @@ public class Face {
           dadosDosJogadores();
           break;
         case 4:
-          System.out.println("Criadores: " +
-              "\nApanaula bBarbz Luizin Samu" +
-              "\nE a perfeita maravilhosa Danizinhaaa!!!");
+          System.out.println("\n\nCriadores: " +
+              "\nAna Paula Chaves Cabral" +
+              "\nBárbara Geovanna Alves Cavalcante" +
+              "\nLuiz Henrique dos Santos Souza" +
+              "\nSamuel da Silva Ferreira" +
+              "\n\nDisciplina: Linguagem de Programação I" +
+              "\nProfessora: Danielle Rousy Dias Ricarte\n\n");
           UI();
           break;
         case 5:
-          System.out.println("Cabou xauu 😘!!!");
+          System.out.println("\n\nFinalizando aplicação...");
           break;
         default:
-          System.out.println("Voce digitou algo que nao esta entre os numeros naturais de 1 a 5. Tente novamente!");
+          System.out.println("\n\nVocê digitou algo que náo está entre os números naturais de 1 a 5. Tente novamente!");
           break;
       }
     } while (op != 5);
@@ -70,23 +74,28 @@ public class Face {
     do {
       try {
         op = 1;
-        System.out.println("Quantas bufunfas voce tem (em dinheiro)!!");
+        System.out.println("Qual o valor do seu saldo inicial (00.00)?");
         saldo = Double.parseDouble(sc.nextLine());
       } catch (NumberFormatException erro) {
         op = 0;
-        System.out.println("Voce digitou um caractere que nao eh numero, meu caro. Digite novamente");
+        System.out.println("Você digitou um caractere que não é número, meu caro. Digite novamente.");
       }
     } while (op == 0);
 
     do {
-      try {
-        op = 1;
-        System.out.println("Quanto da bufunfa voce deseja apostar (tambem em dinheiro)!!");
-        aposta = Double.parseDouble(sc.nextLine());
-      } catch (NumberFormatException erro) {
-        op = 0;
-        System.out.println("Voce digitou um caractere que nao eh numero, meu caro. Digite novamente");
-      }
+        try {
+            op = 1;
+            System.out.println("Qual é o valor da sua aposta (00.00)?");
+            aposta = Double.parseDouble(sc.nextLine());
+            
+            if (aposta > saldo) {
+                System.out.println("\nA aposta não pode ser maior que o saldo disponível.\n\n");
+                op = 0;
+            }
+        } catch (NumberFormatException erro) {
+            op = 0;
+            System.out.println("Você digitou um caractere que não é número, meu caro. Digite novamente.");
+        }
     } while (op == 0);
 
     indice = 0; // Contar onde esta o player
@@ -95,10 +104,10 @@ public class Face {
     for (indice = 0; indice < players.size(); indice++)
       if (players.get(indice).getNome().equalsIgnoreCase(nome)) {
         op = 1;
-        System.out.println("\n==============IMPORTANTE==============" +
-            "\nEncontramos o teu nome em nossa lista de Players. Voce tem, na verdade, o saldo de R$"
+        System.out.println("\n==================================IMPORTANTE==================================" +
+            "\n\nEncontramos o teu nome em nossa lista de Players. Você tem, na verdade, o saldo de R$ "
             + players.get(indice).getSaldo() + ", mas vamos manter a aposta!" +
-            "\n======================================");
+            "\n\n\n==============================================================================");
         players.get(indice).setAposta(aposta);
         break;
       }
@@ -113,15 +122,12 @@ public class Face {
     dealer.gerarMao(deck.getDeck());
     dealer.mostrarMao();
     do {
-      System.out.println("\nEstas sao as suas opçoes: ");
-      System.out.println("\t1 - Manter a mao. ");
-      System.out.println("\t2 - Pegar uma carta");
+      System.out.println("\nEstas são as suas opções: ");
+      System.out.println("\t1 - Manter as cartas da mão. ");
+      System.out.println("\t2 - Pegar uma carta.");
 
-      System.out.println("\nDigite o numero relacionado a opçao que voce escolheu:");
+      System.out.println("\nDigite o numero relacionado a opção que voce escolheu:");
       op = Integer.parseInt(sc.nextLine());
-
-      // Se ele nao ficou com 21 ele pode pegar outra carta (dentro da rodada), Se
-      // ainda nao atingiu 21 ele pode dweiufghweyuogfwe;
 
       switch (op) {
         case 1:
@@ -143,7 +149,6 @@ public class Face {
             jogoAcabado = true;
             break;
           }
-          System.out.println(players.get(indice).getPontos() == 21);
           break;
       }
     } while (!jogoAcabado);
@@ -154,15 +159,15 @@ public class Face {
 
     int indice = 1;
     if (players.size() == 0)
-      System.out.println("Ainda nao existe jogadores cadastrados!!");
+      System.out.println("\n\nAinda não existem jogadores cadastrados!!\n\n\n\n");
     else {
       System.out
-          .println("Estes sao os dados dos jogadores anteriores, incluindo o nome, o saldo atual e a ultima aposta: ");
+          .println("\n\nEstes são os dados dos jogadores anteriores, incluindo o nome, o saldo atual e a ultima aposta: ");
       for (Player aux : players) {
-        System.out.println("Player " + indice++ + "-> " +
+        System.out.println("Player " + indice++ + " -> " +
             "\nNome: " + aux.getNome() +
-            "\nSaldo atual: RS" + String.format("%.2f", aux.getSaldo()) +
-            "\nUltima aposta: R$" + String.format("%.2f", aux.getAposta()) + "\n");
+            "\nSaldo atual: RS " + String.format("%.2f", aux.getSaldo()) +
+            "\nÚltima aposta: R$ " + String.format("%.2f", aux.getAposta()) + "\n");
       }
     }
   }

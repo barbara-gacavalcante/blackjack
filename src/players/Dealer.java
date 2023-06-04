@@ -31,20 +31,18 @@ public class Dealer extends AbstractPlayer {
 
   // Mostrar uma carta do Dealer para o Jogador
   public void mostrarMao() {
-    System.out.println("DEALER \nA carta virada para cima é: ");
+    System.out.println("\n\nDEALER \nA carta virada para cima é: ");
     System.out.println(cartasMao.get(0).getValor() + cartasMao.get(0).getNaipe()); // ?
   }
 
-  // Calcular a pontuação total das cartas na mão
-
   // Manter o número de cartas (17 pontos ou mais) na mão e encerrar jogo
   public void manter() {
-    System.out.println("DEALER\nAs cartas que o Dealer possui são: ");
+    System.out.println("\n\nDEALER\nAs cartas que o Dealer possui são: ");
 
     for (Carta c : cartasMao) {
       System.out.println(c.getValor() + c.getNaipe());
     }
-    System.out.println("Totalizando " + pontos + " pontos.");
+    System.out.println("\nTotalizando " + pontos + " pontos.");
   }
 
   // Adicionar mais uma carta na mão do dealer
@@ -52,13 +50,13 @@ public class Dealer extends AbstractPlayer {
 
     cartasMao.add(deck.get(0));
     deck.remove(0);
-    System.out.println("O dealer pegou uma carta..." + "\nNaipe: " + cartasMao.get(cartasMao.size() - 1).getNaipe()
-        + "\nValor: " + cartasMao.get(cartasMao.size() - 1).getValor());
+    System.out.println("\n\nO dealer pegou uma carta..." + cartasMao.get(cartasMao.size() - 1).getNaipe()
+        + cartasMao.get(cartasMao.size() - 1).getValor());
     pontos += verifyValue(cartasMao.get(cartasMao.size() - 1).getValor());
 
   }
 
-  public int verifyValue(String s) { // Talvez mais organizado na main
+  public int verifyValue(String s) {
     switch (s) {
       case "J":
       case "Q":

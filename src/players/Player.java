@@ -63,11 +63,11 @@ public class Player extends Dealer {
   }
 
   public void mostrarMao() {
-    System.out.println("Mão do jogador: ");
+    System.out.println("\n\nPLAYER\nMão do jogador: ");
     for (Carta c : cartasMao) {
       System.out.println(c.getValor() + c.getNaipe());
     }
-    System.out.println("Totalizando " + pontos + " pontos.");
+    System.out.println("\nTotalizando " + pontos + " pontos.");
   }
 
   public void pegar(ArrayList<Carta> deck) { // Falta implementar se o ás valera 1 ou 11
@@ -75,22 +75,22 @@ public class Player extends Dealer {
 
     cartasMao.add(deck.get(randomNumber));
     deck.remove(randomNumber);
-    System.out.println("Você pegou uma carta..." + cartasMao.get(cartasMao.size() - 1).getNaipe()
+    System.out.println("\n\nVocê pegou uma carta...\n" + cartasMao.get(cartasMao.size() - 1).getNaipe()
         + cartasMao.get(cartasMao.size() - 1).getValor());
     pontos += verifyValue(cartasMao.get(cartasMao.size() - 1).getValor());
-    System.out.println("Totalizando " + pontos + " pontos.");
+    System.out.println("\nTotalizando " + pontos + " pontos.");
   }
 
   public void manter() {
-    System.out.println("Você manteve sua mão e passou a rodada...");
+    System.out.println("\n\nVocê manteve sua mão e passou a rodada...");
   }
 
   public void dadosDoJogo() { // Não sei como implementar (rascunho) // Mostrar resultados anteriores
 
-    System.out.println("Sua mão: ");
+    System.out.println("\n\nSua mão: ");
     for (Carta c : cartasMao) {
       System.out.println(c.getValor() + c.getNaipe());
     }
-    System.out.println("Pontos:" + pontos);
+    System.out.println("\nPontos:" + pontos);
   }
 }
