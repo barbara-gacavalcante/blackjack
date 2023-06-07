@@ -58,7 +58,7 @@ public class Face {
       }
     } while (op != 5);
 
-    sc.close();
+
 
   }
 

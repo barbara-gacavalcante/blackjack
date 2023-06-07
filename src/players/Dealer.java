@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import entities.Carta;
 
-public class Dealer extends AbstractPlayer {
+public class Dealer implements IPlayerInterface {
   private ArrayList<Carta> cartasMao = new ArrayList<Carta>();
   public int pontos = 0;
   private boolean flag = false;
