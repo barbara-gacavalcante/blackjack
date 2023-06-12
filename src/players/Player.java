@@ -85,7 +85,7 @@ public class Player extends Dealer {
     System.out.println("\n\nVocê manteve sua mão... Agora é a vez do Dealer!");
   }
 
-  public void dadosDoJogo() { // Não sei como implementar (rascunho) // Mostrar resultados anteriores
+  public void dadosDoJogo() { // Mostrar resultados anteriores
 
     System.out.println("\n\nSua mão: ");
     for (Carta c : cartasMao) {
