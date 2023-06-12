@@ -74,14 +74,6 @@ public class Controle {
     System.out.println("\t\ta - Manter: manter sua mão como está e finalizar a rodada;");
     System.out.println("\t\tb - Pegar: adicionar mais uma carta à mão para aproximar-se mais de 21 pontos;");
     System.out.println(
-        "\t\tc - *Dobrar: caso houver apostas, você pode pegar apenas uma carta a mais e dobrar sua aposta, e finalizar sua jogada;");
-    System.out.println(
-        "\t\td - *Dividir: se sua mão veio com dois Ás, você poderá dividir sua jogada em duas mãos, como se fossem dois jogos diferentes "
-            +
-            "\n\t\t(caso não tenha essa opção, a partir do segundo Ás seria contado como pontuação 1, a opção de dividir também pode servir para outras cartas duplicadas);");
-    System.out.println(
-        "\t\te - *Desistir: caso houver apostas, a opção de desistir encerraria a rodada imediatamente e devolveria metade do seu dinheiro apostado de volta.");
-    System.out.println(
         "\t9 - Quando o jogador selecionar a opção “Manter”, será a vez do Dealer jogar, irá virar sua segunda carta para cima, e prosseguir automaticamente com sempre as seguintes opções:");
     System.out.println(
         "\t\ta - Se a mão do Dealer tiver 17 ou mais, ele irá Manter e finalizar a própria jogada e finalizar o jogo;");
