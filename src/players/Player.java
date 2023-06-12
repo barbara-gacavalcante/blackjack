@@ -67,7 +67,7 @@ public class Player extends Dealer {
     for (Carta c : cartasMao) {
       System.out.println(c.getValor() + c.getNaipe());
     }
-    System.out.println("\nTotalizando " + pontos + " pontos.");
+    System.out.println("\nTotal: " + pontos + " pontos.");
   }
 
   public void pegar(ArrayList<Carta> deck) { // Falta implementar se o ás valera 1 ou 11
@@ -78,11 +78,11 @@ public class Player extends Dealer {
     System.out.println("\n\nVocê pegou uma carta...\n" + cartasMao.get(cartasMao.size() - 1).getNaipe()
         + cartasMao.get(cartasMao.size() - 1).getValor());
     pontos += verifyValue(cartasMao.get(cartasMao.size() - 1).getValor());
-    System.out.println("\nTotalizando " + pontos + " pontos.");
+    System.out.println("\nTotal: " + pontos + " pontos.");
   }
 
   public void manter() {
-    System.out.println("\n\nVocê manteve sua mão e passou a rodada...");
+    System.out.println("\n\nVocê manteve sua mão... Agora é a vez do Dealer!");
   }
 
   public void dadosDoJogo() { // Não sei como implementar (rascunho) // Mostrar resultados anteriores
@@ -91,6 +91,6 @@ public class Player extends Dealer {
     for (Carta c : cartasMao) {
       System.out.println(c.getValor() + c.getNaipe());
     }
-    System.out.println("\nPontos:" + pontos);
+    System.out.println("\nPontos: " + pontos);
   }
 }

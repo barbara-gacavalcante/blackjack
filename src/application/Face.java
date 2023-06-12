@@ -25,7 +25,7 @@ public class Face {
 	        System.out.println("\t4 - Créditos");
 	        System.out.println("\t5 - Finalizar programa");
 
-	        System.out.println("\tDigite o número indicado pelo menu para a opção desejada: ");
+	        System.out.println("\tDigite o número indicado pelo menu para selecionar a opção desejada: ");
 	        op = Integer.parseInt(sc.nextLine());
 	        switch (op) {
 	            case 1:
@@ -49,11 +49,11 @@ public class Face {
 	                UI();
 	                break;
 	            case 5:
-	                System.out.println("\n\nFinalizando aplicação...");
+	                System.out.println("\n\nFinalizando aplicação. Agradecemos por jogar! :)");
 	                System.exit(0);
 	                break;
 	            default:
-	                System.out.println("\n\nVocê digitou algo que não está entre os números naturais de 1 a 5. Tente novamente!");
+	                System.out.println("\n\nVocê digitou algo que não está entre as opções de 1 a 5 do menu. \nDigite um valor válido!");
 	                break;
 	        }
 	    } while (op != 5);
@@ -71,18 +71,18 @@ public class Face {
     do {
       try {
         op = 1;
-        System.out.println("Qual o valor do seu saldo inicial (00.00)?");
+        System.out.println("Qual o valor do seu saldo inicial (Formato válido: 00.00)?");
         saldo = Double.parseDouble(sc.nextLine());
       } catch (NumberFormatException erro) {
         op = 0;
-        System.out.println("Você digitou um caractere que não é número, meu caro. Digite novamente.");
+        System.out.println("Você digitou um caractere que não é número. Digite um valor válido.");
       }
     } while (op == 0);
 
     do {
         try {
             op = 1;
-            System.out.println("Qual é o valor da sua aposta (00.00)?");
+            System.out.println("Qual é o valor da sua aposta (Formato válido: 00.00)?");
             aposta = Double.parseDouble(sc.nextLine());
             
             if (aposta > saldo) {
@@ -91,7 +91,7 @@ public class Face {
             }
         } catch (NumberFormatException erro) {
             op = 0;
-            System.out.println("Você digitou um caractere que não é número, meu caro. Digite novamente.");
+            System.out.println("Você digitou um caractere que não é número. Digite um valor válido.");
         }
     } while (op == 0);
 
@@ -102,8 +102,8 @@ public class Face {
       if (players.get(indice).getNome().equalsIgnoreCase(nome)) {
         op = 1;
         System.out.println("\n==================================IMPORTANTE==================================" +
-            "\n\nEncontramos o teu nome em nossa lista de Players. Você tem, na verdade, o saldo de R$ "
-            + players.get(indice).getSaldo() + ", mas vamos manter a aposta!" +
+            "\n\nEncontramos o seu nome em nossa lista de Players. Você tem um saldo de R$ "
+            + players.get(indice).getSaldo() + ", mas iremos manter a aposta!" +
             "\n\n\n==============================================================================");
         players.get(indice).setAposta(aposta);
         break;
@@ -119,11 +119,11 @@ public class Face {
     dealer.gerarMao(deck.getDeck());
     dealer.mostrarMao();
     do {
-      System.out.println("\nEstas são as suas opções: ");
-      System.out.println("\t1 - Manter as cartas da mão. ");
+      System.out.println("\nOpções de jogadas disponíveis:");
+      System.out.println("\t1 - Manter as cartas da mão.");
       System.out.println("\t2 - Pegar uma carta.");
 
-      System.out.println("\nDigite o numero relacionado a opção que voce escolheu:");
+      System.out.println("\nDigite o numero relacionado a opção escolhida:");
       op = Integer.parseInt(sc.nextLine());
 
       switch (op) {
@@ -156,10 +156,10 @@ public class Face {
 
     int indice = 1;
     if (players.size() == 0)
-      System.out.println("\n\nAinda não existem jogadores cadastrados!!\n\n\n\n");
+      System.out.println("\n\nAinda não existem jogadores cadastrados!\n\n\n\n");
     else {
       System.out
-          .println("\n\nEstes são os dados dos jogadores anteriores, incluindo o nome, o saldo atual e a ultima aposta: ");
+          .println("\n\nEstes são os dados dos jogadores anteriores, incluindo o nome, o saldo atual e o valor da última aposta: ");
       for (Player aux : players) {
         System.out.println("Player " + indice++ + " -> " +
             "\nNome: " + aux.getNome() +
