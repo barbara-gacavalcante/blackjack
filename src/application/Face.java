@@ -50,7 +50,7 @@ public class Face {
 	                break;
 	            case 5:
 	                System.out.println("\n\nFinalizando aplicação...");
-	                System.exit(0); // Encerra a aplicação
+	                System.exit(0);
 	                break;
 	            default:
 	                System.out.println("\n\nVocê digitou algo que não está entre os números naturais de 1 a 5. Tente novamente!");
