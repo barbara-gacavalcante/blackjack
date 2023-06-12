@@ -1,1 +1,1 @@
-# blackjack - Linguagens de Programação I class final project
+# Blackjack Game - OOP Final Project
