@@ -70,7 +70,7 @@ public class Player extends Dealer {
     System.out.println("\nTotal: " + pontos + " pontos.");
   }
 
-  public void pegar(ArrayList<Carta> deck) { // Falta implementar se o ás valera 1 ou 11
+  public void pegar(ArrayList<Carta> deck) {
     int randomNumber = random.nextInt(deck.size());
 
     cartasMao.add(deck.get(randomNumber));
