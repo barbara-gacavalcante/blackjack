@@ -15,52 +15,49 @@ public class Face {
   private ArrayList<Player> players = new ArrayList<>();
 
   public void UI() {
+	    int op;
+	    do {
+	        System.out.println("\t\t=-=-=-=-=-   BLACKJACK    -=-=-=-=-=\n");
+	        System.out.println("\t\t=-=-=-=-=-=-=   Menu   =-=-=-=-=-=-=\n");
+	        System.out.println("\t1 - Novo jogo");
+	        System.out.println("\t2 - Regras");
+	        System.out.println("\t3 - Dados dos Jogadores Anteriores");
+	        System.out.println("\t4 - Créditos");
+	        System.out.println("\t5 - Finalizar programa");
 
-    int op;
-    do {
-      System.out.println("\t\t=-=-=-=-=-   BLACKJACK    -=-=-=-=-=\n");
-      System.out.println("\t\t=-=-=-=-=-=-=   Menu   =-=-=-=-=-=-=\n");
-      System.out.println("\t1 - Novo jogo");
-      System.out.println("\t2 - Regras");
-      System.out.println("\t3 - Dados dos Jogadores Anteriores");
-      System.out.println("\t4 - Créditos");
-      System.out.println("\t5 - Finalizar programa");
-
-      System.out.println("\tDigite o número indicado pelo menu para a opção desejada: ");
-      op = Integer.parseInt(sc.nextLine());
-      switch (op) {
-        case 1:
-          novoJogo();
-          break;
-        case 2:
-          con.regras();
-          UI();
-          break;
-        case 3:
-          dadosDosJogadores();
-          break;
-        case 4:
-          System.out.println("\n\nCriadores: " +
-              "\nAna Paula Chaves Cabral" +
-              "\nBárbara Geovanna Alves Cavalcante" +
-              "\nLuiz Henrique dos Santos Souza" +
-              "\nSamuel da Silva Ferreira" +
-              "\n\nDisciplina: Linguagem de Programação I" +
-              "\nProfessora: Danielle Rousy Dias Ricarte\n\n");
-          UI();
-          break;
-        case 5:
-          System.out.println("\n\nFinalizando aplicação...");
-          break;
-        default:
-          System.out.println("\n\nVocê digitou algo que náo está entre os números naturais de 1 a 5. Tente novamente!");
-          break;
-      }
-    } while (op != 5);
-
-
-
-  }
+	        System.out.println("\tDigite o número indicado pelo menu para a opção desejada: ");
+	        op = Integer.parseInt(sc.nextLine());
+	        switch (op) {
+	            case 1:
+	                novoJogo();
+	                break;
+	            case 2:
+	                con.regras();
+	                UI();
+	                break;
+	            case 3:
+	                dadosDosJogadores();
+	                break;
+	            case 4:
+	                System.out.println("\n\nCriadores: " +
+	                        "\nAna Paula Chaves Cabral" +
+	                        "\nBárbara Geovanna Alves Cavalcante" +
+	                        "\nLuiz Henrique dos Santos Souza" +
+	                        "\nSamuel da Silva Ferreira" +
+	                        "\n\nDisciplina: Linguagem de Programação I" +
+	                        "\nProfessora: Danielle Rousy Dias Ricarte\n\n");
+	                UI();
+	                break;
+	            case 5:
+	                System.out.println("\n\nFinalizando aplicação...");
+	                System.exit(0); // Encerra a aplicação
+	                break;
+	            default:
+	                System.out.println("\n\nVocê digitou algo que não está entre os números naturais de 1 a 5. Tente novamente!");
+	                break;
+	        }
+	    } while (op != 5);
+	}
 
   public void novoJogo() {
     int op, indice;

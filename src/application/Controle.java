@@ -4,45 +4,49 @@ import players.*;
 
 public class Controle {
 
-  public void compararRes(Player player, Dealer dealer) {
-    if (player.getPontos() > dealer.getPontos() && player.getPontos() <= 21) {
-      System.out.println("\n\nVitória do Player! :)");
-      if (player.getPontos() == 21) {
-        System.out.println("\nPlayer ganhou de 21, então ganha 2x o valor da aposta!\n");
-        player.setSaldo(player.getAposta() * 2);
-        return;
-      }
-      System.out.println("\nPlayer ganha o valor da aposta!\n");
-      player.setSaldo(player.getAposta());
-      return;
-    }
-    if (player.getPontos() < dealer.getPontos() && dealer.getPontos() <= 21) {
-      System.out.println("\n\nVitória do Dealer :(");
-      if (dealer.getPontos() == 21) {
-        System.out.println("\nDealer ganhou de 21, então Player perde 2x o valor da aposta.\n");
-        player.setSaldo(-(player.getAposta() * 2));
-        return;
-      }
-      System.out.println("\nPlayer perde o valor da aposta.\n");
-      player.setSaldo(-(player.getAposta()));
-      return;
-    }
+	public void compararRes(Player player, Dealer dealer) {
+	    if (player.getPontos() > dealer.getPontos() && player.getPontos() <= 21) {
+	        System.out.println("\n\nVitória do Player! :)");
+	        if (player.getPontos() == 21) {
+	            System.out.println("\nPlayer ganhou de 21, então ganha 2x o valor da aposta!\n");
+	            player.setSaldo(player.getAposta() * 2);
+	            return;
+	        }
+	        System.out.println("\nPlayer ganha o valor da aposta!\n");
+	        player.setSaldo(player.getAposta());
+	        return;
+	    }
+	    if (player.getPontos() < dealer.getPontos() && dealer.getPontos() <= 21) {
+	        System.out.println("\n\nVitória do Dealer :(");
+	        if (dealer.getPontos() == 21) {
+	            System.out.println("\nDealer ganhou de 21, então Player perde 2x o valor da aposta.\n");
+	            player.setSaldo(-(player.getAposta() * 2));
+	            return;
+	        }
+	        System.out.println("\nPlayer perde o valor da aposta.\n");
+	        player.setSaldo(-(player.getAposta()));
+	        return;
+	    }
 
-    if (player.getPontos() > 21 && dealer.getPontos() > 21) {
-      System.out.println("\n\nOs dois perderam, haha!!");
-      System.out.println("\nPlayer perde metade do valor da aposta!\n");
-      player.setSaldo(-(player.getAposta() / 2));
-      return;
-    } else if (player.getPontos() > 21) {
-      System.out.println("\n\nPlayer perdeu :(");
-      System.out.println("\nPlayer ultrapassou os 21 pontos, então perde o valor da aposta.\n");
-      player.setSaldo(-(player.getAposta()));
-    } else if (dealer.getPontos() > 21) {
-      System.out.println("\n\nVitória do Player! :)");
-      System.out.println("\nDealer ultrapassou os 21 pontos, então o player ganha o valor da aposta!\n");
-      player.setSaldo(+(player.getAposta()));
-    }
-  }
+	    if (player.getPontos() > 21 && dealer.getPontos() > 21) {
+	        System.out.println("\n\nOs dois perderam, haha!!");
+	        System.out.println("\nPlayer perde metade do valor da aposta!\n");
+	        player.setSaldo(-(player.getAposta() / 2));
+	        return;
+	    } else if (player.getPontos() > 21) {
+	        System.out.println("\n\nPlayer perdeu :(");
+	        System.out.println("\nPlayer ultrapassou os 21 pontos, então perde o valor da aposta.\n");
+	        player.setSaldo(-(player.getAposta()));
+	    } else if (dealer.getPontos() > 21) {
+	        System.out.println("\n\nVitória do Player! :)");
+	        System.out.println("\nDealer ultrapassou os 21 pontos, então o player ganha o valor da aposta!\n");
+	        player.setSaldo(+(player.getAposta()));
+	    } else if (player.getPontos() == dealer.getPontos() && player.getPontos() < 21) {
+	        System.out.println("\n\nEmpate! Os dois têm a mesma pontuação.");
+	        System.out.println("\nPlayer recebe metade do valor da aposta.\n");
+	        player.setSaldo(player.getAposta() / 2);
+	    }
+	}
 
   public void regras() {
     System.out.println("\t\t\t- BLACKJACK GAME -\n");
