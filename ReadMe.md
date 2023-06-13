@@ -45,7 +45,7 @@ Para a criação do jogo, os desenvolvedores pesquisaram acerca do funcionamento
 <details>
 <summary>Ver imagem da UML</summary>
   
-![UML BLACKJACK](https://github.com/barbara-gacavalcante/blackjack/assets/95313202/53cc9bfb-d852-42e6-bb75-b56be9d8ad74 "UML do Blackjack")
+![UML Blackjack](https://github.com/barbara-gacavalcante/blackjack/assets/95313202/8ec2990d-d3e5-42d6-afd2-b469e8fe1baf "UML do Blackjack")
 
 </details>
 
